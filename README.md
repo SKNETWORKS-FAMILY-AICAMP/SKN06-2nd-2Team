@@ -20,7 +20,7 @@ SKN06-2nd-2Team : 퇴사자들
 | 변수명 | 처리 방법 |
 | --- | --- |
 | avg_monthly_hrs | 결측치 없음
-| department | 열 삭제/(결측치가 많고 결과에 큰 영향을 미칠 것같지 않아 삭제함)
+| department | 열 삭제
 | filed_complaint | 결측값을 0으로 채우기
 | last_evaluation | 결측치를 평균값으로 대체     
 | n_projects | 결측치 없음             
