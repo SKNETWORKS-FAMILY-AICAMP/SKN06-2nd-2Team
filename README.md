@@ -3,13 +3,12 @@
 
 ![배사](https://github.com/user-attachments/assets/e2f83b79-320e-49c3-8551-511a56be997d)
 ## 팀명
-SKN06-2nd-2Team : 퇴사자들
+SKN06-2nd-2Team : 퇴사자들✨
 
 ## 팀원 소개
 | 성은진 | 노원재 | 전하연 | 조해원 | 
 |--|--|--|--|
-|  |![원재님](https://github.com/user-attachments/assets/76753c14-6447-489e-8b4a-049ceeb88af5)|![하연님](https://github.com/user-attachments/assets/f4757293-c9bb-4487-a5b0-60ba193f1537)|![해원님](https://github.com/user-attachments/assets/f24c3139-aebd-467b-bfc9-020e86b1ded5)
-
+| <img src="https://github.com/user-attachments/assets/f44655ee-a119-4a82-a43f-c23eabbb9c9f" width="220"/> | <img src="https://github.com/user-attachments/assets/76753c14-6447-489e-8b4a-049ceeb88af5" width="220"/> | <img src="https://github.com/user-attachments/assets/f4757293-c9bb-4487-a5b0-60ba193f1537" width="220"/> | <img src="https://github.com/user-attachments/assets/f24c3139-aebd-467b-bfc9-020e86b1ded5" width="220"/> |
 
 ## 프로젝트 개요
 > 직원들이 퇴사하는 이유에는 다양한 요인이 있을 것입니다. 그중 8가지 특징을 기반으로 직원의 퇴사 가능성을 예측하는 모델을 개발하여, 퇴사율을 줄이고 직원이 유지 및 만족도를 높일 수 있는 전략을 수립하고자 합니다.
@@ -117,7 +116,11 @@ SKN06-2nd-2Team : 퇴사자들
 </table>
 - KNN에서 작은 K 값에서는 분산(variance)이 높고, 큰 K 값에서는 편향(bias)이 높아지는 경향이 있음
 
-# Streamlit 구현
+## 검증
+![딥러닝](https://github.com/user-attachments/assets/5d8c15ce-6ddd-4baf-82d4-577450bcc12f)
+
+
+# 💡Streamlit 구현
 <table style="width: 100%; text-align: center;">
   <tr>
     <td><img src="https://github.com/user-attachments/assets/559a72b0-1ae9-4508-9e39-ed31f81d4478" width="500"/></td>
