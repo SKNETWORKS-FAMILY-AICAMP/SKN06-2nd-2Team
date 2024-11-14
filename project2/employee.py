@@ -13,7 +13,7 @@ if "app_started" not in st.session_state:
 # 대문 화면 (app_started가 False일 때만)
 if not st.session_state.app_started:
     # 대문 이미지 표시
-    st.image("C:\\Users\\Playdata\\Desktop\\project2\\image\\대문사진.jpg", use_column_width=True)
+    st.image(r"image\대문사진.jpg", use_column_width=True)
     st.title("직원 이탈 예측 어플리케이션")
     st.write("어플리케이션을 시작하려면 아래 버튼을 클릭하세요.")
     
