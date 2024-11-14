@@ -10,10 +10,18 @@
 
 ## EDA📊
 
+## 데이터
+|![분포](https://github.com/user-attachments/assets/824faec9-74b1-4c06-b10c-f13975d4a8c0)|![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
+
 ### 상관관계
-(히트맵 사진)
+![히트맵](https://github.com/user-attachments/assets/9cba910a-90a4-46a0-8a5a-578e664718d0)
+
 ### 카테고리별 시각화
-(비교사진)
+![카테고리별](https://github.com/user-attachments/assets/d22b67f7-84ec-49f1-a7b0-4a8c66e4bc46)
+
+### 수치형 시각화
+![수치](https://github.com/user-attachments/assets/1f099914-fbae-4507-a837-cba2e271f684)
+
 
 ## Machine Learning🧠
 
@@ -26,7 +34,25 @@
 ### 모델 별 평가 지표
 | 모델 | Accuracy | Precision | Recall | F1 Score | ROC AUC |
 | --- | --- | --- | --- | --- | --- |
-| **Decision Tree** | 0.9687 | 0.9413 | 0.9228 | 0.9320 | 0.95 |
+| **Decision Tree** | 0.9708 | 0.9413 | 0.9228 | 0.9320 | 0.95 |
 | **Random Forest** | 0.9828 | 0.9726 | 0.9455 | 0.9622 | 0.99 |
 | **XGBoost** | 0.9828 | 0.9841 | 0.9409 | 0.9621 | 0.99 |
-| **KNN** | 0.9719 | 0.9191 | 0.9636 | 0.9409 | 0. |
+| **KNN** | 0.9719 | 0.9152 | 0.9636 | 0.9388 | 0.99 |
+
+- Decision Tree
+![트리](https://github.com/user-attachments/assets/96dc6fb4-c65d-4149-8a26-2103f6b5255a)
+- Random Forest
+![랜덤포레스트](https://github.com/user-attachments/assets/3b76dc9c-4d56-4bee-8e62-616c4920134e)
+- XGBoost
+![부스트](https://github.com/user-attachments/assets/50454c73-9a2b-495a-ae6a-30f781844c89)
+
+## Deep Learing🧠
+
+## 과적합 인지
+![과적합](https://github.com/user-attachments/assets/c97ced12-407d-43fd-9fbd-bc6c449c7ff0)
+
+## 프로젝트 회고
+성은진 :
+노원재 : 
+전하연 :
+조해원 : 
