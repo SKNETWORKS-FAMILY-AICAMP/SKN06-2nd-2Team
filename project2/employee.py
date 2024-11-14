@@ -83,11 +83,11 @@ if st.button("예측하기"):
     # 결과 해석 및 이미지 표시
     st.subheader("결과 해석")
     if prediction_proba[0][1] > 0.7:
-        st.image(r"C:\Users\Playdata\Desktop\project2\image\퇴사할거임.png", use_column_width=True)
+        st.image(r"image\퇴사할거임.png", use_column_width=True)
         st.warning("이탈 가능성이 높습니다. 직원과의 면담이나 직무 만족도 향상 방안을 고려해보세요.")
     elif prediction_proba[0][1] > 0.5:
-        st.image(r"C:\Users\Playdata\Desktop\project2\image\퇴사고민중.png", use_column_width=True)
+        st.image(r"image\퇴사고민중.png", use_column_width=True)
         st.info("이탈 가능성이 중간 수준입니다. 해당 직원의 직무 몰입도와 만족도를 주기적으로 확인하세요.")
     else:
-        st.image(r"C:\Users\Playdata\Desktop\project2\image\퇴사안함.png", use_column_width=True)
+        st.image(r"image\퇴사안함.png", use_column_width=True)
         st.success("이탈 가능성이 낮습니다. 이 직원은 현재 회사에 만족하고 있습니다.")
