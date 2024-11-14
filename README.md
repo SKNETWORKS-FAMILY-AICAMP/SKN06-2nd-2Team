@@ -19,22 +19,21 @@ SKN06-2nd-2Team : 퇴사자들
 ### 결측치
 | 변수명 | 처리 방법 |
 | --- | --- |
-| avg_monthly_hrs | 결측치 없음
-| department | 열 삭제
-| filed_complaint | 결측값을 0으로 채우기
-| last_evaluation | 결측치를 평균값으로 대체     
-| n_projects | 결측치 없음             
-| recently_promoted | 결측값을 0으로 채우기  
-| salary | 결측치 없음                  
-| satisfaction | 결측치를 평균값으로 대체        
-| status | 결측치 없음                 
-| tenure | 결측값을 1으로 채우기    
+| avg_monthly_hrs(평균 월 근무 시간) | 결측치 없음
+| department(부서) | 열 삭제
+| filed_complaint(부서 만족) | 결측값을 0으로 채우기
+| last_evaluation(최근 평가) | 결측치를 평균값으로 대체     
+| n_projects(프로젝트 수) | 결측치 없음             
+| recently_promoted(최근 승진 여부) | 결측값을 0으로 채우기  
+| salary(급여) | 결측치 없음                  
+| satisfaction(만족도) | 결측치를 평균값으로 대체        
+| status(퇴사 여부) | 결측치 없음                 
+| tenure(근속 기간) | 결측값을 1으로 채우기    
 
 ### 이상치
 ![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
 
 ## 📊EDA
-
 ![분포](https://github.com/user-attachments/assets/824faec9-74b1-4c06-b10c-f13975d4a8c0)
 
 ### 상관관계
@@ -55,16 +54,6 @@ SKN06-2nd-2Team : 퇴사자들
 3. XGBoost
 4. KNN
 
-### 모델 별 평가 지표
-| 모델 | Accuracy | Precision | Recall | F1 Score | ROC AUC |
-| --- | --- | --- | --- | --- | --- |
-| **Decision Tree** | 0.9733 | 0.9563 | 0.9727 | 0.9416 | 0.96 |
-| **Random Forest** | 0.9810 | 0.9809 | 0.9364 | 0.9582 | 0.99 |
-| **XGBoost** | 0.9824 | 0.9795 | 0.9440 | 0.9614 | 0.99 |
-| **KNN** | 0.9708 | 0.9152 | 0.9636 | 0.9388 | 0.99 |
-
-- 모델 평가결과에 따라 Random Forest와 XGBoost가 가장 좋은 성능을 보이고 있음
-
 ### 모델 별 요약
 1. Decision Tree  <br>
 ![트리](https://github.com/user-attachments/assets/96dc6fb4-c65d-4149-8a26-2103f6b5255a)
@@ -75,9 +64,35 @@ SKN06-2nd-2Team : 퇴사자들
 3. XGBoost  <br>
 ![부스트](https://github.com/user-attachments/assets/50454c73-9a2b-495a-ae6a-30f781844c89)
 
-### 최종 모델 선정 : XGBoost
-- 데이터셋에 클래스 불균형이 있는 경우, F1 점수나 ROC-AUC가 더 적합할 수 있음
-- 특히 정확성이 가장 탁월하여 XGBoost (최적화)모델을 선택함
+### 모델 별 평가 지표
+| 모델 | Accuracy | Precision | Recall | F1 Score | ROC AUC |
+| --- | --- | --- | --- | --- | --- |
+| **Decision Tree** | 0.9733 | 0.9563 | 0.9727 | 0.9416 | 0.96 |
+| **Random Forest** | 0.9810 | 0.9809 | 0.9364 | 0.9582 | 0.99 |
+| **XGBoost** | 0.9824 | 0.9795 | 0.9440 | 0.9614 | 0.99 |
+| **KNN** | 0.9708 | 0.9152 | 0.9636 | 0.9388 | 0.99 |
+
+- 모델 평가결과에 따라 Random Forest와 XGBoost가 가장 좋은 성능을 보이고 있음
+
+![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) ![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
+
+### -> 최종 모델 선정 : XGBoost
+- 데이터셋에 클래스 불균형이 있는 경우, F1 점수나 ROC-AUC가 더 적합할 수 있음, 특히 정확성이 가장 탁월하여 XGBoost (최적화)모델을 선택함
+- 하이퍼파라미터 선정
+  1. 초기 모델 학습 및 평가
+  기본 XGBoost 모델로 데이터를 학습하고 테스트 데이터를 통해 성능을 평가함. 초기 모델의 성능을 바탕으로 하이퍼파라미터 최적화를 진행할 필요성을 확인함
+
+  2. 하이퍼파라미터 튜닝
+  탐색 대상 하이퍼파라미터: learning_rate, max_depth, min_child_weight, gamma, colsample_bytree의 다양한 조합을 무작위로 탐색하여 최적의 값을 찾음
+  탐색 과정: RandomizedSearchCV로 50개의 하이퍼파라미터 조합을 3-폴드 교차 검증을 통해 평가함.
+  최적의 하이퍼파라미터: 각 매개변수를 조정하여 최적의 학습 속도, 트리 깊이, 분할 조건을 선정함.
+
+  3. 최적화된 모델 평가
+  최적화된 XGBoost 모델로 최종 평가를 진행한 결과, 예측 정확도가 향상되었으며, 과적합을 방지하면서도 일반화 성능이 개선되었습니다.
+
+  4. 결론
+  하이퍼파라미터 최적화를 통해 XGBoost 모델의 예측 성능을 개선하고 이탈 예측의 정확성을 높였습니다.
+
 
 # 🧠Deep Learing 
 
@@ -101,12 +116,15 @@ SKN06-2nd-2Team : 퇴사자들
   </tr>
 </table>
 - KNN에서 작은 K 값에서는 분산(variance)이 높고, 큰 K 값에서는 편향(bias)이 높아지는 경향이 있음
-- 
-- 
-
 
 # Streamlit 구현
-(사진)
+<table style="width: 100%; text-align: center;">
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/559a72b0-1ae9-4508-9e39-ed31f81d4478" width="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/9f6b49c8-7c8a-43c1-8faa-0b36474b609b" width="500"/></td>
+  </tr>
+</table>
+
 
 ## 프로젝트 회고
 성은진 :
