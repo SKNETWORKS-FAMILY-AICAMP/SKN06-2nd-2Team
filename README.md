@@ -19,7 +19,7 @@ SKN06-2nd-2Team : 퇴사자들✨
 | 변수명 | 처리 방법 | 근거
 | --- | --- | ---
 | avg_monthly_hrs(평균 월 근무 시간) | 결측치 없음
-| department(부서) | 열 삭제
+| department(부서) | 열 삭제|
 | filed_complaint(불만 접수 여) | 결측값을 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
 | last_evaluation(최근 평가) | 결측치를 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
 | n_projects(프로젝트 수) | 결측치 없음             
@@ -31,13 +31,19 @@ SKN06-2nd-2Team : 퇴사자들✨
 
 ### 이상치
 ![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
-
+>IQR 기준으로 이상치 확인시 이상치 없음
 ## 📊EDA
 ![분포](https://github.com/user-attachments/assets/824faec9-74b1-4c06-b10c-f13975d4a8c0)
-
+> 근무 중: 약 70%   퇴사: 약 30%
+> 클래스 불균형을 보임
+> 주요 평가 지표
+ROC-AUC: 클래스 불균형에 영향을 적게 받으며, 모델의 전반적인 성능을 평가
+Precision-Recall 곡선과 PR-AUC: 소수 클래스(퇴사)의 예측 성능을 중점적으로 평가
+F1-score: 정밀도와 재현율의 조화평균으로, 불균형 데이터에서 모델 성능을 균형있게 평가
 ### 상관관계
 ![히트맵](https://github.com/user-attachments/assets/9cba910a-90a4-46a0-8a5a-578e664718d0)
-
+> 모든 변수 쌍의 상관계수가 0.5 미만으로 나타남
+> 각 변수가 모델에 고유한 정보를 제공할 수 있으므로, 현재의 모든 변수를 유지하는 것이 분석에 도움
 ### 카테고리 변수 퇴사율 시각화
 ![카테고리별](https://github.com/user-attachments/assets/d22b67f7-84ec-49f1-a7b0-4a8c66e4bc46)
 
