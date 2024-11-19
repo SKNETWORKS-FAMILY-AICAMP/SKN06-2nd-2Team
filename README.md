@@ -19,7 +19,7 @@ SKN06-2nd-2Team : 퇴사자들✨
 | 변수명 | 처리 방법 | 근거
 | --- | --- | ---
 | avg_monthly_hrs(평균 월 근무 시간) | 없음
-| department(부서) | 열 삭제|
+| department(부서) | 열 삭제| 결측치가 많고, 이를 채울 수 있는 적절한 방법이 없음
 | filed_complaint(불만 접수 여) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
 | last_evaluation(최근 평가) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
 | n_projects(프로젝트 수) | 없음             
