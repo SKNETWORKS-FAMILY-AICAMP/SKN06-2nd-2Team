@@ -18,16 +18,16 @@ SKN06-2nd-2Team : 퇴사자들✨
 ### 결측치
 | 변수명 | 처리 방법 | 근거
 | --- | --- | ---
-| avg_monthly_hrs(평균 월 근무 시간) | 결측치 없음
+| avg_monthly_hrs(평균 월 근무 시간) | 없음
 | department(부서) | 열 삭제|
-| filed_complaint(불만 접수 여) | 결측값을 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
-| last_evaluation(최근 평가) | 결측치를 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
-| n_projects(프로젝트 수) | 결측치 없음             
-| recently_promoted(최근 승진 여부) | 결측값을 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체  
-| salary(급여) | 결측치 없음                  
-| satisfaction(만족도) | 결측치를 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보        
-| status(퇴사 여부) | 결측치 없음                 
-| tenure(근속 기간) | 결측값을 1으로 채우기|2~10 범위의 수치로 1년 미만 근속자를 결측치로 처리한 것으로 추정   
+| filed_complaint(불만 접수 여) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
+| last_evaluation(최근 평가) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
+| n_projects(프로젝트 수) | 없음             
+| recently_promoted(최근 승진 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체  
+| salary(급여) | 없음                  
+| satisfaction(만족도) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보        
+| status(퇴사 여부) | 없음                 
+| tenure(근속 기간) | 1로 채우기|2~10 범위의 수치로 1년 미만 근속자를 결측치로 처리한 것으로 추정   
 
 ### 이상치
 ![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
