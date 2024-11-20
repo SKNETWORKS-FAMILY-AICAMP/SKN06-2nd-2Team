@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 
 # 모델 로드
 model = joblib.load("employee_churn_model.pkl")
+scaler = joblib.load("saved_models/standard_scaler.pkl")
 
 # 세션 상태 설정: 'app_started'가 없으면 False로 초기화
 if "app_started" not in st.session_state:
