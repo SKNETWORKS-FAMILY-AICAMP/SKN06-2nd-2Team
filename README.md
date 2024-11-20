@@ -84,7 +84,7 @@ SKN06-2nd-2Team : 퇴사자들✨
 
 
 ### -> 최종 모델 선정 : XGBoost
-- 데이터셋에 클래스 불균형이 있는 경우, F1 점수나 ROC-AUC가 더 적합함. 특히 종합적으로 XGBoost가 가장 탁월하여 최적화 모델로 선택함
+- 데이터셋에 클래스 불균형이 있는 경우, F1 점수나 ROC-AUC가 더 적합함. 특히 종합적으로 XGBoost가 가장 탁월하여 최적화 모델로 선택함
 
 ![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) ![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
 - 하이퍼파라미터 선정
