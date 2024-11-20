@@ -148,7 +148,9 @@ SKN06-2nd-2Team : 퇴사자들✨
     <td style="text-align:center;">
       1. 훈련 정확도와 검증 정확도 간 차이가 크지 않음. <br>
       2. 검증 정확도의 안정성</td>
-    <td style="text-align:center;">과적합으로 보이는 부분이 있고 애매함. KNN은 보통 최종 선정 모델로 사용하지 않음</td>
+    <td style="text-align:center;">
+      1.과적합으로 보이는 부분이 있고 애매함. <br>
+      2. KNN은 보통 최종 선정 모델로 사용하지 않음</td>
   <tr>
  
 </table>
