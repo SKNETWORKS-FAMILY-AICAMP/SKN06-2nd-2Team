@@ -113,8 +113,13 @@ SKN06-2nd-2Team : 퇴사자들✨
     <td style="text-align:center;"><img src="https://github.com/user-attachments/assets/08cc050f-4d33-416e-8aeb-4a32371daad4" alt="과적합rf"></td>
   <tr>
   <tr>
-    <td style="text-align:center;">D 설명.</td>
-    <td style="text-align:center;">R 설명.</td>
+    <td style="text-align:center;">
+      1. 훈련 정확도와 검증 정확도의 유사성 <br>
+      2. 트리 개수 증가에 따른 안정적인 성능 <br>
+      3. 검증 정확도의 안정적 수렴</td>
+    <td style="text-align:center;">
+      1. 테스트 정확도가 훈련 정확도보다 높거나 비슷. <br>
+      2. 두 정확도가 함께 증가하고 수렴.</td>
   </tr>
   <tr>
     <th style="text-align:center;">XGBoost</th>
@@ -124,16 +129,16 @@ SKN06-2nd-2Team : 퇴사자들✨
     <td style="text-align:center;"><img src="https://github.com/user-attachments/assets/e5b9d34f-f501-42cb-b13e-9f56041f42e9" alt="과적합knn"></td>
   <tr>
   <tr>
-    <td style="text-align:center;">X 설명.</td>
+    <td style="text-align:center;">
+      1. 훈련 정확도와 검증 정확도 간 차이가 크지 않음. <br>
+      2. 검증 정확도의 안정성</td>
     <td style="text-align:center;">K 설명.</td>
   <tr>
  
 </table>
 
 </table>
-1. 훈련 정확도와 검증 정확도의 유사성 : 훈련 정확도와 검증 정확도 사이의 차이가 크게 벌어지지 않고 유사한 수준에서 유지됨을 볼 수 있음. <br>
-2. 트리 개수 증가에 따른 안정적인 성능: 트리 개수를 늘려도 훈련 정확도와 검증 정확도 모두 큰 변화 없이 안정적인 수치를 유지하고 있음. <br>
-3. 검증 정확도의 안정적 수렴: 검증 정확도가 특정 값(약 0.982) 근처에서 안정화되었으며, 훈련 정확도 역시 0.985 부근에서 일정하게 유지되고 있습니다. 위 이유들로 판단했을 때 이 모델은 과적합되지 않았으며, 데이터에 대해 적절한 일반화 성능을 갖추고 있다고 할 수 있음.
+
 
 # 🧠Deep Learning
 
