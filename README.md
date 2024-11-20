@@ -13,25 +13,19 @@ SKN06-2nd-2Team : 퇴사자들✨
 ## 프로젝트 개요
 > 직원들이 퇴사하는 이유에는 다양한 요인이 있을 것입니다. 그중 8가지 특징을 기반으로 직원의 퇴사 가능성을 예측하는 모델을 개발하여, 퇴사율을 줄이고 직원이 유지 및 만족도를 높일 수 있는 전략을 수립하고자 합니다.
 
-## 전처리
+| 특성 | 의미 |
+| ---- | ---- |
+| avg_monthly_hrs | 평균 월 근무 시간
+| department | 부서
+| filed_complaint | 불만 접수 여부
+| last_evaluation | 최근 평가   
+| n_projects | 프로젝트 수            
+| recently_promoted | 최근 승진 여부 
+| salary | 급여               
+| satisfaction | 만족도     
+| status|퇴사 여부               
+| tenure | 근속 기간
 
-### 결측치
-| 변수명 | 처리 방법 | 근거
-| --- | --- | ---
-| avg_monthly_hrs(평균 월 근무 시간) | 없음
-| department(부서) | 열 삭제| 결측치가 많고, 이를 채울 수 있는 적절한 방법이 없음
-| filed_complaint(불만 접수 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
-| last_evaluation(최근 평가) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
-| n_projects(프로젝트 수) | 없음             
-| recently_promoted(최근 승진 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체  
-| salary(급여) | 없음                  
-| satisfaction(만족도) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보        
-| status(퇴사 여부) | 없음                 
-| tenure(근속 기간) | 1로 채우기|2~10 범위의 수치로 1년 미만 근속자를 결측치로 처리한 것으로 추정   
-
-### 이상치
-![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
->IQR 기준으로 이상치 확인시 이상치 없음
 ## 📊EDA
 
 ### 상관관계
@@ -53,6 +47,25 @@ SKN06-2nd-2Team : 퇴사자들✨
 ### 수치형 변수 퇴사율 시각화
 ![수치](https://github.com/user-attachments/assets/1f099914-fbae-4507-a837-cba2e271f684)
 
+## 전처리
+
+### 결측치
+| 특성 | 처리 방법 | 근거
+| --- | --- | ---
+| avg_monthly_hrs(평균 월 근무 시간) | 없음
+| department(부서) | 열 삭제| 결측치가 많고, 이를 채울 수 있는 적절한 방법이 없음
+| filed_complaint(불만 접수 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
+| last_evaluation(최근 평가) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
+| n_projects(프로젝트 수) | 없음             
+| recently_promoted(최근 승진 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체  
+| salary(급여) | 없음                  
+| satisfaction(만족도) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보        
+| status(퇴사 여부) | 없음                 
+| tenure(근속 기간) | 1로 채우기|2~10 범위의 수치로 1년 미만 근속자를 결측치로 처리한 것으로 추정   
+
+### 이상치
+![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
+>IQR 기준으로 이상치 확인시 이상치 없음
 
 # ⚙️Machine Learning
 
