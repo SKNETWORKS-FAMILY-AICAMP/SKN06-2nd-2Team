@@ -86,21 +86,37 @@ SKN06-2nd-2Team : 퇴사자들✨
 ### -> 최종 모델 선정 : XGBoost
 - 데이터셋에 클래스 불균형이 있는 경우, F1 점수나 ROC-AUC가 더 적합함. 특히 종합적으로 XGBoost가 가장 탁월하여 최적화 모델로 선택함
 
-![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) ![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
+
 - 하이퍼파라미터 선정
-  1. 초기 모델 학습 및 평가
+  ```python
+  # RandomizedSearchCV 활용
+  randomsearch = RandomizedSearchCV(estimator=xgb_model, param_distributions=params, n_iter=50, cv=3, n_jobs=-1, scoring='accuracy', random_state=0)
+  randomsearch.fit(X_train, y_train)
+
+  # 최적의 하이퍼파라미터와 성능 출력
+  print("\n최적의 하이퍼파라미터 : ", randomsearch.best_params_,'\n')
+  bestrf = randomsearch.best_estimator_
+  best_params = randomsearch.best_params_
+  evaluate_model(bestrf, X_test, y_test, 'XGBOOST 최적 하이퍼파라미터')
+  
+![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) 
+
+최적의 하이퍼파라미터 :  {'min_child_weight': 1, 'max_depth': 15, 'learning_rate': 0.15, 'gamma': 0.2, 'colsample_bytree': 0.5}
+
+![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
+1. 초기 모델 학습 및 평가<br>
   기본 XGBoost 모델로 데이터를 학습하고 테스트 데이터를 통해 성능을 평가함. 초기 모델의 성능을 바탕으로 하이퍼파라미터 최적화를 진행할 필요성을 확인함
 
-  2. 하이퍼파라미터 튜닝
-  탐색 대상 하이퍼파라미터: learning_rate, max_depth, min_child_weight, gamma, colsample_bytree의 다양한 조합을 무작위로 탐색하여 최적의 값을 찾음
-  탐색 과정: RandomizedSearchCV로 50개의 하이퍼파라미터 조합을 3-폴드 교차 검증을 통해 평가함.
+2. 하이퍼파라미터 튜닝<br>
+  탐색 대상 하이퍼파라미터: learning_rate, max_depth, min_child_weight, gamma, colsample_bytree의 다양한 조합을 무작위로 탐색하여 최적의 값을 찾음<br>
+  탐색 과정: RandomizedSearchCV로 50개의 하이퍼파라미터 조합을 3-폴드 교차 검증을 통해 평가함.<br>
   최적의 하이퍼파라미터: 각 매개변수를 조정하여 최적의 학습 속도, 트리 깊이, 분할 조건을 선정함.
 
-  3. 최적화된 모델 평가
-  최적화된 XGBoost 모델로 최종 평가를 진행한 결과, 예측 정확도가 향상되었으며, 과적합을 방지하면서도 일반화 성능이 개선되었습니다.
+3. 최적화된 모델 평가<br>
+  최적화된 XGBoost 모델로 최종 평가를 진행한 결과, 예측 정확도가 향상하며 과적합을 방지하면서도 일반화 성능이 개선.
 
-  4. 결론
-  하이퍼파라미터 최적화를 통해 XGBoost 모델의 예측 성능을 개선하고 이탈 예측의 정확성을 높였습니다.
+4. 결론<br>
+  하이퍼파라미터 최적화를 통해 XGBoost 모델의 예측 성능을 개선, 이탈 예측의 정확성을 높임.
 
 
 ## 과적합 여부
