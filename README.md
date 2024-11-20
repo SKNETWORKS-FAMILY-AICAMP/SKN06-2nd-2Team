@@ -89,6 +89,15 @@ SKN06-2nd-2Team : 퇴사자들✨
 
 - 하이퍼파라미터 선정
   ```python
+  # XGBOOST 하이퍼파라미터 튜닝 (RandomizedSearchCV)
+  params = {
+      'learning_rate' : [0.05, 0.10, 0.15, 0.20, 0.25, 0.30],
+      'max_depth' : [ 3, 4, 5, 6, 8, 10, 12, 15],
+      'min_child_weight' : [ 1, 3, 5, 7 ],
+      'gamma': [ 0.0, 0.1, 0.2, 0.3, 0.4 ],
+      'colsample_bytree' : [ 0.3, 0.4, 0.5, 0.7 ]
+  }
+
   # RandomizedSearchCV 활용
   randomsearch = RandomizedSearchCV(estimator=xgb_model, param_distributions=params, n_iter=50, cv=3, n_jobs=-1, scoring='accuracy', random_state=0)
   randomsearch.fit(X_train, y_train)
@@ -98,10 +107,17 @@ SKN06-2nd-2Team : 퇴사자들✨
   bestrf = randomsearch.best_estimator_
   best_params = randomsearch.best_params_
   evaluate_model(bestrf, X_test, y_test, 'XGBOOST 최적 하이퍼파라미터')
+
   
 ![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) 
-
-- 최적의 하이퍼파라미터 :  {'min_child_weight': 1, 'max_depth': 15, 'learning_rate': 0.15, 'gamma': 0.2, 'colsample_bytree': 0.5}
+- 최적의 하이퍼파라미터
+| 매개변수 | 최적값 | 매개변수 설명 |
+| ----- | -----| ------- |
+| min_child_weight | 1 | 리프 노드 생성을 위한 최소 가중치 합. 값이 높을수록 모델의 보수성 증가 |
+| max_depth | 15 | 트리의 최대 깊이 제한값. 과적합 제어를 위한 주요 매개변수 |
+| learning_rate | 0.15 | 각 트리의 가중치를 조정하는 학습률. 낮은 값은 보수적 학습 유도 |
+| gamma | 0.2 | 리프 노드 분할을 위한 최소 손실 감소 기준값. 값이 클수록 보수적 모델 생성 |
+| colsample_bytree | 0.5 | 각 트리 생성 시 사용할 특성의 비율. 1보다 작은 값으로 과적합 방지 |
 
 ![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
 1. 초기 모델 학습 및 평가<br>
