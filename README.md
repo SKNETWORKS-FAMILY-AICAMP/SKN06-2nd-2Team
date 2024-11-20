@@ -105,22 +105,31 @@ SKN06-2nd-2Team : 퇴사자들✨
 
 ## 과적합 여부
 <table>
-  <tr>
+  </tr>
     <th style="text-align:center;">Decision Tree</th>
     <th style="text-align:center;">Random Forest</th>
-  </tr>
   <tr>
     <td style="text-align:center;"><img src="https://github.com/user-attachments/assets/030dd222-5c16-4ff9-bd87-9e6ce107d59d" alt="과적합dt"></td>
     <td style="text-align:center;"><img src="https://github.com/user-attachments/assets/08cc050f-4d33-416e-8aeb-4a32371daad4" alt="과적합rf"></td>
+  <tr>
+  <tr>
+    <td style="text-align:center;">D 설명.</td>
+    <td style="text-align:center;">R 설명.</td>
   </tr>
   <tr>
     <th style="text-align:center;">XGBoost</th>
     <th style="text-align:center;">KNN</th>
-  </tr>
   <tr>
     <td style="text-align:center;"><img src="https://github.com/user-attachments/assets/6c1e309c-9ad2-42cd-8132-27365750c1b2" alt="과적합xgb"></td>
     <td style="text-align:center;"><img src="https://github.com/user-attachments/assets/e5b9d34f-f501-42cb-b13e-9f56041f42e9" alt="과적합knn"></td>
-  </tr>
+  <tr>
+  <tr>
+    <td style="text-align:center;">X 설명.</td>
+    <td style="text-align:center;">K 설명.</td>
+  <tr>
+ 
+</table>
+
 </table>
 1. 훈련 정확도와 검증 정확도의 유사성 : 훈련 정확도와 검증 정확도 사이의 차이가 크게 벌어지지 않고 유사한 수준에서 유지됨을 볼 수 있음. <br>
 2. 트리 개수 증가에 따른 안정적인 성능: 트리 개수를 늘려도 훈련 정확도와 검증 정확도 모두 큰 변화 없이 안정적인 수치를 유지하고 있음. <br>
