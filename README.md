@@ -108,8 +108,6 @@ SKN06-2nd-2Team : 퇴사자들✨
   best_params = randomsearch.best_params_
   evaluate_model(bestrf, X_test, y_test, 'XGBOOST 최적 하이퍼파라미터')
 
-  
-![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) 
 - 최적의 하이퍼파라미터
 | 매개변수 | 최적값 | 매개변수 설명 |
 | ----- | -----| ------- |
@@ -118,6 +116,8 @@ SKN06-2nd-2Team : 퇴사자들✨
 | learning_rate | 0.15 | 각 트리의 가중치를 조정하는 학습률. 낮은 값은 보수적 학습 유도 |
 | gamma | 0.2 | 리프 노드 분할을 위한 최소 손실 감소 기준값. 값이 클수록 보수적 모델 생성 |
 | colsample_bytree | 0.5 | 각 트리 생성 시 사용할 특성의 비율. 1보다 작은 값으로 과적합 방지 |
+
+![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) 
 
 ![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
 1. 초기 모델 학습 및 평가<br>
