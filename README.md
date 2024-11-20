@@ -101,7 +101,7 @@ SKN06-2nd-2Team : 퇴사자들✨
   
 ![Before](https://github.com/user-attachments/assets/37707bbb-0410-4192-9525-b779ba037297) 
 
-최적의 하이퍼파라미터 :  {'min_child_weight': 1, 'max_depth': 15, 'learning_rate': 0.15, 'gamma': 0.2, 'colsample_bytree': 0.5}
+>최적의 하이퍼파라미터 :  {'min_child_weight': 1, 'max_depth': 15, 'learning_rate': 0.15, 'gamma': 0.2, 'colsample_bytree': 0.5}<
 
 ![After](https://github.com/user-attachments/assets/af2c3cec-3153-4df0-b23a-b8b9b22e90f0)
 1. 초기 모델 학습 및 평가<br>
