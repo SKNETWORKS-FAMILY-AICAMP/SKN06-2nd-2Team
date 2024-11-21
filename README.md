@@ -190,10 +190,41 @@ SKN06-2nd-2Team : 퇴사자들✨
 
 # 🧠Deep Learning
 
-## 검증
+1. 딥러닝 모델 생성
+```python
+import torch.nn as nn
+
+class Resign_model(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.b1 = nn.Sequential(nn.Linear(8, 32), nn.BatchNorm1d(32), nn.ReLU(), nn.Dropout(p=0.5))
+        self.b2 = nn.Sequential(nn.Linear(32, 16), nn.BatchNorm1d(16), nn.ReLU(), nn.Dropout(p=0.5))
+        self.out_block = nn.Linear(16, 10)
+
+    def forward(self, X):
+        X = self.b1(X)
+        X = self.b2(X)
+        output = self.out_block(X)
+        return output
+```
+2. 학습 결과
+![딥러닝결과](https://github.com/user-attachments/assets/fa8128a7-34d0-4ec7-aa79-20131367b5e0)
+ - 모델은 조기 종료가 트리거되기 전 58 에폭 동안 학습<br>
 ![딥러닝](https://github.com/user-attachments/assets/5d8c15ce-6ddd-4baf-82d4-577450bcc12f)
+     - 손실 추이:<br>
+      훈련 손실은 초기 에폭부터 감소하여 마지막 에폭에서 0.2504에 도달<br>
+      검증 손실은 0.157-0.159 주변에서 안정화<br>
+
+    - 성능 지표:<br>
+      정확도: 지속적으로 높은 수준을 유지하며 마지막 에폭에서 96% 달성<br>
+      F1 점수: 0.9602로 정점을 찍어 높은 정밀도와 재현율을 나타냄<br>
+      ROC-AUC: 약 0.95를 유지하며 우수한 식별 능력을 보여줌<br>
+    - 최고 모델:<br>
+      53번째 에폭에서 검증 손실 0.1573으로 저장됨<br>
+  - 결론: 딥러닝 모델도 좋은 성능을 구현했지만 XGBoost보다는 낮은 성능을 보임.
 
 # 💡Streamlit 구현
+- XGBoost모델로 스트림릿 구현
 <table style="width: 100%; text-align: center;">
   <tr>
     <td><img src="https://github.com/user-attachments/assets/559a72b0-1ae9-4508-9e39-ed31f81d4478" width="500"/></td>
