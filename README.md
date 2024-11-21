@@ -38,7 +38,6 @@ SKN06-2nd-2Team : 퇴사자들✨
 - 클래스 불균형을 보임
 - 주요 평가 지표
   - ROC-AUC: 클래스 불균형에 영향을 적게 받으며, 모델의 전반적인 성능을 평가
-  - Precision-Recall 곡선과 PR-AUC: 소수 클래스(퇴사)의 예측 성능을 중점적으로 평가
   - F1-score: 정밀도와 재현율의 조화평균으로, 불균형 데이터에서 모델 성능을 균형있게 평가
 
 ### 카테고리 변수 퇴사율 시각화
@@ -52,16 +51,16 @@ SKN06-2nd-2Team : 퇴사자들✨
 ### 결측치
 | 특성 | 처리 방법 | 근거
 | --- | --- | ---
-| avg_monthly_hrs(평균 월 근무 시간) | 없음
-| department(부서) | 열 삭제| 결측치가 많고, 이를 채울 수 있는 적절한 방법이 없음
-| filed_complaint(불만 접수 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
-| last_evaluation(최근 평가) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
-| n_projects(프로젝트 수) | 없음             
-| recently_promoted(최근 승진 여부) | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체  
-| salary(급여) | 없음                  
-| satisfaction(만족도) | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보        
-| status(퇴사 여부) | 없음                 
-| tenure(근속 기간) | 1로 채우기|2~10 범위의 수치로 1년 미만 근속자를 결측치로 처리한 것으로 추정   
+| avg_monthly_hrs | 없음
+| department | 열 삭제| 결측치가 많고, 이를 채울 수 있는 적절한 방법이 없음
+| filed_complaint| 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체
+| last_evaluation | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보    
+| n_projects | 없음             
+| recently_promoted | 0으로 채우기|None과 1로 구성된 이진변수로  None값을 0으로 대체  
+| salary| 없음                  
+| satisfaction | 평균값으로 대체|수치형 데이터로 데이터의 전반적인 경향 유지 및 분석 안정성 확보        
+| status | 없음                 
+| tenure | 1로 채우기|2~10 범위의 수치로 1년 미만 근속자를 결측치로 처리한 것으로 추정   
 
 ### 이상치
 ![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
@@ -211,15 +210,15 @@ class Resign_model(nn.Module):
 ![딥러닝결과](https://github.com/user-attachments/assets/fa8128a7-34d0-4ec7-aa79-20131367b5e0)
  - 모델은 조기 종료가 트리거되기 전 58 에폭 동안 학습<br>
 ![딥러닝](https://github.com/user-attachments/assets/5d8c15ce-6ddd-4baf-82d4-577450bcc12f)
-     - 손실 추이:<br>
+     - 손실 추이<br>
       훈련 손실은 초기 에폭부터 감소하여 마지막 에폭에서 0.2504에 도달<br>
       검증 손실은 0.157-0.159 주변에서 안정화<br>
 
-    - 성능 지표:<br>
+    - 성능 지표<br>
       정확도: 지속적으로 높은 수준을 유지하며 마지막 에폭에서 96% 달성<br>
       F1 점수: 0.9602로 정점을 찍어 높은 정밀도와 재현율을 나타냄<br>
       ROC-AUC: 약 0.95를 유지하며 우수한 식별 능력을 보여줌<br>
-    - 최고 모델:<br>
+    - 최고 모델<br>
       53번째 에폭에서 검증 손실 0.1573으로 저장됨<br>
   - 결론: 딥러닝 모델도 좋은 성능을 구현했지만 XGBoost보다는 낮은 성능을 보임.
 
