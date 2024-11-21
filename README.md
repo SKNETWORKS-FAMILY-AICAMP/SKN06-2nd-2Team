@@ -223,7 +223,7 @@ class Resign_model(nn.Module):
   - 결론: 딥러닝 모델도 좋은 성능을 구현했지만 XGBoost보다는 낮은 성능을 보임.
 
 # 💡Streamlit 구현
-- XGBoost모델로 스트림릿 구현
+- XGBoost모델로 직원 이탈 예측 어플리케이션을 스트림릿으로 구현
 <table style="width: 100%; text-align: center;">
   <tr>
     <td><img src="https://github.com/user-attachments/assets/559a72b0-1ae9-4508-9e39-ed31f81d4478" width="500"/></td>
