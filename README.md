@@ -159,12 +159,14 @@ SKN06-2nd-2Team : 퇴사자들✨
   <tr>
   <tr>
     <td style="text-align:center;">
+      1. 테스트 정확도가 훈련 정확도보다 높거나 비슷 <br>
+      2. 두 정확도가 함께 증가하고 수렴 
+      </td>
+    <td style="text-align:center;">
       1. 훈련 정확도와 검증 정확도의 유사성 <br>
       2. 트리 개수 증가에 따른 안정적인 성능 <br>
-      3. 검증 정확도의 안정적 수렴</td>
-    <td style="text-align:center;">
-      1. 테스트 정확도가 훈련 정확도보다 높거나 비슷 <br>
-      2. 두 정확도가 함께 증가하고 수렴 </td>
+      3. 검증 정확도의 안정적 수렴
+      </td>
   </tr>
   <tr>
     <th style="text-align:center;">XGBoost</th>
