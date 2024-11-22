@@ -66,6 +66,39 @@ SKN06-2nd-2Team : 퇴사자들✨
 ![이상치](https://github.com/user-attachments/assets/85cc0ab3-58a4-4e2c-a738-6f8b002293c5)
 >IQR 기준으로 이상치 확인시 이상치 없음
 
+### 스케일링
+ ```python
+#######################  Scaling 처리 #############################
+
+# 수치형 데이터 Scaler
+scaler = StandardScaler()
+numerical_columns = data.select_dtypes(include=['float64', 'int64']).columns
+if 'status' in numerical_columns:
+    numerical_columns = numerical_columns.drop('status')
+data[numerical_columns] = scaler.fit_transform(data[numerical_columns])
+
+
+#######################  전처리 데이터 저장 시작 #############################
+save_dir = 'saved_models'
+os.makedirs(save_dir, exist_ok=True)
+scaler_path = os.path.join(save_dir, 'standard_scaler.pkl')
+with open(scaler_path, 'wb') as fw_scaler:
+    pickle.dump(scaler, fw_scaler)
+
+#######################  전처리 데이터 저장 끝 #############################
+
+
+
+# 범주형 변수를 Label Encoding으로 변환
+categorical_columns = data.select_dtypes(include=['object']).columns
+label_encoders = {}
+for col in categorical_columns:
+    le = LabelEncoder()
+    data[col] = le.fit_transform(data[col])
+    label_encoders[col] = le  # 각 열의 인코더 저장 (나중에 해석 가능)
+
+#######################  Scaling 처리 끝 #############################
+ ```
 # ⚙️Machine Learning
 
 ### 사용된 ML모델
@@ -73,7 +106,7 @@ SKN06-2nd-2Team : 퇴사자들✨
 2. Random Forest
 3. XGBoost
 4. KNN
-
+'''
 ### 모델 별 요약
 1. Decision Tree  <br>
 ![트리](https://github.com/user-attachments/assets/96dc6fb4-c65d-4149-8a26-2103f6b5255a)
