@@ -98,7 +98,7 @@ for col in categorical_columns:
     label_encoders[col] = le  # 각 열의 인코더 저장 (나중에 해석 가능)
 
 #######################  Scaling 처리 끝 #############################
- ```
+```
 # ⚙️Machine Learning
 
 ### 사용된 ML모델
@@ -106,7 +106,7 @@ for col in categorical_columns:
 2. Random Forest
 3. XGBoost
 4. KNN
-'''
+5. 
 ### 모델 별 요약
 1. Decision Tree  <br>
 ![트리](https://github.com/user-attachments/assets/96dc6fb4-c65d-4149-8a26-2103f6b5255a)
